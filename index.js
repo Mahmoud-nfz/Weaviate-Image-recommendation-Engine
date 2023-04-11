@@ -7,4 +7,6 @@ if(schemaRes.classes.length == 0){
     initSchemas() ;
 }
 
+// insert() ;
+
 query();

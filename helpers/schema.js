@@ -1,5 +1,6 @@
+import { client } from "./client.js";
 const schemaConfig = {
-    'class': 'Meme',
+    'class': 'Landscape',
     'vectorizer': 'img2vec-neural',
     'vectorIndexType': 'hnsw',
     'moduleConfig': {

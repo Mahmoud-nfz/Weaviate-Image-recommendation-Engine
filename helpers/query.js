@@ -6,14 +6,14 @@ export async function query(path){
     const test = Buffer.from( readFileSync(path) ).toString('base64');
     
     const resImage = await client.graphql.get()
-      .withClassName('Meme')
+      .withClassName('Landscape')
       .withFields(['image'])
       .withNearImage({ image: test })
       .withLimit(1)
       .do();
     
     // Write result to filesystem
-    const result = resImage.data.Get.Meme[0].image;
+    const result = resImage.data.Get.Landscape[0].image;
     // console.log(result) ;
     writeFileSync('./result.jpg', result, 'base64');
 }

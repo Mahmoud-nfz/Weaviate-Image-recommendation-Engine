@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+import { client } from './client.js';
 
 export async function insert(path){
   path = './img/index1.png' ;
@@ -7,10 +8,10 @@ export async function insert(path){
   const b64 = Buffer.from(img).toString('base64');
   
   await client.data.creator()
-    .withClassName('Meme')
+    .withClassName('Landscape')
     .withProperties({
       image: b64,
-      text: 'matrix meme'
+      text: 'water scenery'
     })
     .do();
 }
