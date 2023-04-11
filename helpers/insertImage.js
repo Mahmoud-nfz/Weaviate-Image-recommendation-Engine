@@ -7,11 +7,12 @@ export async function insert(path){
   
   const b64 = Buffer.from(img).toString('base64');
   
-  await client.data.creator()
+  const res = await client.data.creator()
     .withClassName('Landscape')
     .withProperties({
       image: b64,
       text: 'water scenery'
     })
     .do();
+  console.log("This is the vector embedding for the inserted image: ",res.vector);
 }

@@ -11,9 +11,10 @@ export async function query(path){
       .withNearImage({ image: test })
       .withLimit(1)
       .do();
-    
+      
     // Write result to filesystem
     const result = resImage.data.Get.Landscape[0].image;
-    // console.log(result) ;
+    console.log("Printing the result to ./result.jpg") ;
     writeFileSync('./result.jpg', result, 'base64');
+    console.log("Done!") ;
 }
